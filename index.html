@@ -30,15 +30,23 @@
       let percent;
       let msg = "";
 
+      // Nhàn + Phong
       if (
         (a === "nhàn" && b === "phong") ||
-        (a === "phong" && b === "nhàn") ||
-        (a === "phong" && b === "thi") ||
-        (a === "thi" && b === "phong")
+        (a === "phong" && b === "nhàn")
       ) {
         percent = 99;
         msg = "Ủa sao hợp dữ vậy 😳💖";
       }
+      // Phong + Thi (âm vô cực)
+      else if (
+        (a === "phong" && b === "thi") ||
+        (a === "thi" && b === "phong")
+      ) {
+        percent = "-100000000000000000000000000000000000000000000";
+        msg = "Âm tới mức vũ trụ cũng bó tay 💀❄️";
+      }
+      // Nguyên + Nhàn
       else if (
         (a === "nguyên" && b === "nhàn") ||
         (a === "nhàn" && b === "nguyên")
@@ -46,13 +54,15 @@
         percent = 200;
         msg = "Chắc 2 bạn này người yêu nhau rồi 😆💘";
       }
+      // Nhàn + Dũng
       else if (
         (a === "nhàn" && b === "dũng") ||
         (a === "dũng" && b === "nhàn")
       ) {
         percent = 1000;
-        msg = "Cái này là định mệnh cmnr 😱🔥";
+        msg = "Định mệnh level max luôn 😱🔥";
       }
+      // Random
       else {
         percent = Math.floor(Math.random() * 31) + 60;
 
@@ -62,6 +72,7 @@
         else msg = "Hợp quá trời rồi 😆💞";
       }
 
+      // Viết hoa chữ cái đầu
       a = a.charAt(0).toUpperCase() + a.slice(1);
       b = b.charAt(0).toUpperCase() + b.slice(1);
 
