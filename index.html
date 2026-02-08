@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Độ hợp nhau 💞</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h2>Độ hợp nhau 💖</h2>
+
+    <input id="name1" placeholder="Nhập tên">
+    <input id="name2" placeholder="Nhập tên">
+
+    <button onclick="check()">Xem kết quả ✨</button>
+
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function check() {
+      let a = name1.value.trim().toLowerCase();
+      let b = name2.value.trim().toLowerCase();
+
+      if (!a || !b) {
+        result.innerText = "Nhập đủ 2 tên trước đã nè 😅";
+        return;
+      }
+
+      let percent;
+      let msg = "";
+
+      if (
+        (a === "nhàn" && b === "phong") ||
+        (a === "phong" && b === "nhàn") ||
+        (a === "phong" && b === "thi") ||
+        (a === "thi" && b === "phong")
+      ) {
+        percent = 99;
+        msg = "Ủa sao hợp dữ vậy 😳💖";
+      }
+      else if (
+        (a === "nguyên" && b === "nhàn") ||
+        (a === "nhàn" && b === "nguyên")
+      ) {
+        percent = 200;
+        msg = "Chắc 2 bạn này người yêu nhau rồi 😆💘";
+      }
+      else if (
+        (a === "nhàn" && b === "dũng") ||
+        (a === "dũng" && b === "nhàn")
+      ) {
+        percent = 1000;
+        msg = "Cái này là định mệnh cmnr 😱🔥";
+      }
+      else {
+        percent = Math.floor(Math.random() * 31) + 60;
+
+        if (percent < 70) msg = "Cũng ổn áp nha 😄";
+        else if (percent < 80) msg = "Khá hợp đó 👀";
+        else if (percent < 90) msg = "Hợp ghê luôn á 💕";
+        else msg = "Hợp quá trời rồi 😆💞";
+      }
+
+      a = a.charAt(0).toUpperCase() + a.slice(1);
+      b = b.charAt(0).toUpperCase() + b.slice(1);
+
+      result.innerText =
+        `Độ hợp của ${a} & ${b} là ${percent}% 💖\n${msg}`;
+    }
+  </script>
+</body>
+</html>
